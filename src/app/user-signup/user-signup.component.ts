@@ -28,7 +28,6 @@ export class UserSignupComponent implements OnInit {
         console.log(result);
         this.auth_token = result.auth_token;
         console.log(this.auth_token);
-        this.router.navigate(['/']);
       },
       error1 => {
         console.log(error1);

@@ -12,6 +12,8 @@ import {routing, appRoutingProviders} from './app.routing';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { HomeComponent } from './home/home.component';
+import { StoreComponent } from './store/store.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { UserLoginComponent } from './user-login/user-login.component';
     UserSignupComponent,
     UsersListComponent,
     NavbarComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    HomeComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

@@ -4,12 +4,14 @@ import {Routes, RouterModule} from '@angular/router';
 import {UserSignupComponent} from './user-signup/user-signup.component';
 import {AppComponent} from './app.component';
 import {UserLoginComponent} from './user-login/user-login.component';
+import {HomeComponent} from './home/home.component';
 
 const appRoutes: Routes = [
-  {path: '', component: AppComponent},
+  {path: '', component: HomeComponent},
   {path: 'registrarse', component: UserSignupComponent},
   {path: 'login', component: UserLoginComponent},
-  {path: '**', component: AppComponent}
+  {path: 'inicio', component: HomeComponent},
+  {path: '**', component: HomeComponent}
 ];
 
 export const appRoutingProviders: any [] = [];

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
 
@@ -10,10 +11,10 @@ import { UserService } from '../services/user.service';
 export class NavbarComponent implements OnInit {
 
   public isNavbarCollapsed = true;
-  private auth_token: string;
+  public auth_token: string;
   public user: User;
 
-  constructor(private _userService: UserService) {
+  constructor(private _userService: UserService, private router: Router) {
     this.user = new User();
   }
 
@@ -28,11 +29,16 @@ export class NavbarComponent implements OnInit {
     if (this.auth_token) {
       this._userService.getCurrent(this.auth_token).subscribe(result => {
           console.log(result);
+          this.user.nombres = result.nombres;
         },
         error1 => {
           console.log(error1);
         });
     }
+  }
+
+  logout() {
+    this._userService.logout();
   }
 
 }
