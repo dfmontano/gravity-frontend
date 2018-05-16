@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/operator/map';
-import { Observable } from 'rxjs/Observable';
+import {Observable} from 'rxjs/Observable';
 
 import {User} from '../models/user.model';
 
@@ -29,15 +29,24 @@ export class UserService {
     return this.http.post(this.apiUrl + '/signup', data, {headers: headers});
   }
 
-  login(email: String, password: String) {
-
+  login(user: User): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const data = JSON.stringify(user);
+    return this.http.post(this.apiUrl + '/auth/login', data, {headers: headers});
+  }
 
+  logout() {
+    localStorage.removeItem('auth_token');
+  }
 
+  getCurrent(token: string): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', token);
+    return this.http.get(this.apiUrl + '/users/current', {headers: headers});
   }
 
   delete(id: number) {
     return this.http.delete('localhost:3000/users/' + id);
   }
+
 
 }

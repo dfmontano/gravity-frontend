@@ -11,8 +11,9 @@ import {UserService} from '../services/user.service';
 export class UserLoginComponent implements OnInit {
 
   user: User;
+  private auth_token: string;
 
-  constructor(private _userService: UserService) {
+  constructor(private _userService: UserService, private router: Router) {
     this.user = new User();
   }
 
@@ -20,7 +21,17 @@ export class UserLoginComponent implements OnInit {
   }
 
   login() {
+    this._userService.login(this.user).subscribe(result => {
+        this.auth_token = result.auth_token;
 
+        // Stores the auth token in localStorage
+        localStorage.setItem('auth_token', this.auth_token);
+        console.log(this.auth_token);
+        this.router.navigate(['/']);
+      },
+      error1 => {
+        console.log(error1);
+      });
   }
 
 }
