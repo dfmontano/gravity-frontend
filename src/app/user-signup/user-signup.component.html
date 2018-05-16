@@ -1,21 +1,35 @@
-<div class="title-section">
-  <div class="row">
-    <div class="small-12 colums">
-      <h2>Afiliacion</h2>
-    </div>
+<form #userSignup="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="cedula">Nro. de Cedula</label>
+    <input type="number" class="form-control" name="cedula" #cedula="ngModel" [(ngModel)]="user.cedula" id="cedula"
+           required>
+    <small *ngIf="cedula.touched && !cedula.valid" class="form-text text-warning">La cedula ingresada es incorrecta
+    </small>
   </div>
-</div>
-
-<div class="spacer module"></div>
-
-<div class="content-area testimonials-page row">
-  <div class="medium-6 medium-offset-3 small-12 columns form-container">
-
-    <h2>Registrese para empezar a comprar</h2>
-
-    <form name="user-signup" (ngSubmit)="f.form-valid && register()" >
-
-    </form>
-
+  <div class="form-group">
+    <label for="email">Correo Electronico:</label>
+    <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" id="email" required>
+    <small *ngIf="email.touched && !email.valid" class="form-text text-warning">El correo ingresado es invalido</small>
   </div>
-</div>
+  <div class="form-group">
+    <label for="nombres">Nombres:</label>
+    <input type="text" class="form-control" name="nombres" #nombres="ngModel" [(ngModel)]="user.nombres" id="nombres"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" class="form-control" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos"
+           id="apellidos" required>
+  </div>
+  <div class="form-group">
+    <label for="password">Contrasena:</label>
+    <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password"
+           id="password" required>
+  </div>
+  <div class="form-group">
+    <label for="password_confirmation">Confirme su contrasena</label>
+    <input type="password" class="form-control" name="password_confirmation" #password="ngModel"
+           [(ngModel)]="user.password_confirmation" id="password_confirmation" required>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!userSignup.form.valid">Registrarse</button>
+</form>

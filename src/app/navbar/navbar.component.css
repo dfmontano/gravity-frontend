@@ -1,0 +1,16 @@
+.top-navbar {
+  font-size: small;
+}
+
+.top-nav-item {
+  border-left: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+  /*display: block;*/
+  /*padding: .7rem 1rem;*/
+  /*margin-bottom: 0;*/
+}
+
+.bot-navbar {
+  background: transparent !important;
+}
+

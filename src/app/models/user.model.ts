@@ -1,18 +1,15 @@
-import {Deserializable} from './deserializable.model';
+export class User {
 
-export class User implements Deserializable<User> {
-
+  auth_token: string;
   cedula: number;
   nombres: string;
   apellidos: string;
   email: string;
   password: string;
-
-  deserialize(input: any): User {
-
-    Object.assign(this, input);
-    return this;
-
-  }
+  password_confirmation: string;
+  barrio_sector: string;
+  calle_principal: string;
+  calle_secundaria: string;
+  fecha_nacimiento: string;
 
 }
