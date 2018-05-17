@@ -8,15 +8,13 @@ import { Store } from '../models/store.model';
 export class StoreService {
 
   public apiUrl: string;
-  public store: Store;
 
   constructor(private http: HttpClient) {
     this.apiUrl = 'http://localhost:3000';
-    this.store = new Store();
   }
 
   getById(id: number): Observable<any> {
-    const request_url = this.apiUrl + 'stores/' + id;
+    const request_url = this.apiUrl + '/stores/' + id;
     return this.http.get(request_url);
   }
 

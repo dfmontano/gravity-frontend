@@ -14,6 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
 import { SingleStoreComponent } from './single-store/single-store.component';
+import {StoreService} from './services/store.service';
+import {ProductService} from './services/product.service';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { SingleStoreComponent } from './single-store/single-store.component';
   ],
   providers: [
     UserService,
+    StoreService,
     appRoutingProviders
   ],
   bootstrap: [AppComponent]
