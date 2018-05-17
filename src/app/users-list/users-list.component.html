@@ -1,3 +1,25 @@
-<p>
-  users-list works!
-</p>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Cedula</th>
+    <th scope="col">Nombres</th>
+    <th scope="col">Apellidos</th>
+    <th scope="col">E-Mail</th>
+    <th scope="col">Premium?</th>
+    <th scope="col">Fecha de Registro</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>{{ user.id }}</td>
+    <td>{{ user.cedula }}</td>
+    <td>{{ user.nombres }}</td>
+    <td>{{ user.apellidos }}</td>
+    <td>{{ user.email }}</td>
+    <td *ngIf="user.premium == true"> Premium</td>
+    <td *ngIf="user.premium == false"> Normal</td>
+    <td>{{ user.created_at }}</td>
+  </tr>
+  </tbody>
+</table>

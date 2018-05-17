@@ -16,11 +16,13 @@ export class UserService {
   }
 
   getAll() {
-    return this.http.get<User[]>('localhost:3000/users/index');
+    const headers = new HttpHeaders().set('Authorization', localStorage.getItem('auth_token'));
+    return this.http.get<User[]>(this.apiUrl + '/users/index', {headers: headers});
   }
 
   getById(id: number) {
-    return this.http.get('localhost:300/users/show/' + id);
+    const headers = new HttpHeaders().set('Authorization', localStorage.getItem('auth_token'));
+    return this.http.get('localhost:300/users/show/' + id, {headers: headers});
   }
 
   create(user: User): Observable<any> {
