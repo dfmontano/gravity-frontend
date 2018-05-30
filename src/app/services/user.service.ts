@@ -22,7 +22,7 @@ export class UserService {
 
   getById(id: number) {
     const headers = new HttpHeaders().set('Authorization', localStorage.getItem('auth_token'));
-    return this.http.get('localhost:300/users/show/' + id, {headers: headers});
+    return this.http.get(this.apiUrl + '/users/show/' + id, {headers: headers});
   }
 
   create(user: User): Observable<any> {
@@ -49,6 +49,15 @@ export class UserService {
 
   delete(id: number) {
     return this.http.delete('localhost:3000/users/' + id);
+  }
+
+  recoverPassword(token: string, password: string): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const data = {
+      password_reset_token: token,
+      new_password: password
+    };
+    return this.http.post(this.apiUrl + '/users/new_password', data, {headers: headers});
   }
 
 

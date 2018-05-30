@@ -14,8 +14,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
 import { SingleStoreComponent } from './single-store/single-store.component';
-import {StoreService} from './services/store.service';
-import {ProductService} from './services/product.service';
+import { StoreService } from './services/store.service';
+import { ProductService } from './services/product.service';
+import { NewCategoryComponent } from './new-category/new-category.component';
+import { CategoriesMenuComponent } from './categories-menu/categories-menu.component';
+import { CategoryService } from './services/category.service';
+import { UserPanelComponent } from './user-panel/user-panel.component';
+import { PasswordRecoverComponent } from './password-recover/password-recover.component';
 
 
 @NgModule({
@@ -27,6 +32,10 @@ import {ProductService} from './services/product.service';
     UserLoginComponent,
     HomeComponent,
     SingleStoreComponent,
+    NewCategoryComponent,
+    CategoriesMenuComponent,
+    UserPanelComponent,
+    PasswordRecoverComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +47,7 @@ import {ProductService} from './services/product.service';
   providers: [
     UserService,
     StoreService,
+    CategoryService,
     appRoutingProviders
   ],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Category } from './category.model';
+import { Subcategory } from './subcategory.model';
 
 export class Store {
 
@@ -7,7 +8,7 @@ export class Store {
   descripcion: string;
   slogan: string;
   fijo: number;
-  celula: number;
+  celular: number;
   propietario: string;
   ruc: number;
   calle_principal: string;
@@ -25,5 +26,6 @@ export class Store {
   updated_at: string;
   approved: boolean;
   category: Category;
+  subcategory: Subcategory;
 
 }
