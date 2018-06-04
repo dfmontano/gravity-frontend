@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/operator/map';
-import {Observable} from 'rxjs/Observable';
-
-import {User} from '../models/user.model';
+import { Observable } from 'rxjs/Observable';
+import { environment } from '../../environments/environment';
+import { User } from '../models/user.model';
 
 
 @Injectable()
@@ -12,7 +12,7 @@ export class UserService {
   public apiUrl: string;
 
   constructor(private http: HttpClient) {
-    this.apiUrl = 'http://localhost:3000';
+    this.apiUrl = environment.apiUrl;
   }
 
   getAll() {

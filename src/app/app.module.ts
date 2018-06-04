@@ -21,6 +21,8 @@ import { CategoriesMenuComponent } from './categories-menu/categories-menu.compo
 import { CategoryService } from './services/category.service';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { PasswordRecoverComponent } from './password-recover/password-recover.component';
+import { SingleProductComponent } from './single-product/single-product.component';
+import { CartItemsComponent } from './cart-items/cart-items.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { PasswordRecoverComponent } from './password-recover/password-recover.co
     CategoriesMenuComponent,
     UserPanelComponent,
     PasswordRecoverComponent,
+    SingleProductComponent,
+    CartItemsComponent,
   ],
   imports: [
     BrowserModule,
