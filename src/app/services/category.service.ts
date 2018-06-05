@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Category } from '../models/category.model';
 import { Subcategory } from '../models/subcategory.model';
+import { environment } from '../../environments/environment';
 import 'rxjs/operator/map';
 
 @Injectable()
@@ -12,7 +13,7 @@ export class CategoryService {
 
 
   constructor(private http: HttpClient) {
-    this.apiUrl = 'http://localhost:3000';
+    this.apiUrl = environment.apiUrl;
   }
 
   getAll(): Observable<any> {

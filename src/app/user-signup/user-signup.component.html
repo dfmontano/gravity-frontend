@@ -1,35 +1,46 @@
-<form #userSignup="ngForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="cedula">Nro. de Cedula</label>
-    <input type="number" class="form-control" name="cedula" #cedula="ngModel" [(ngModel)]="user.cedula" id="cedula"
-           required>
-    <small *ngIf="cedula.touched && !cedula.valid" class="form-text text-warning">La cedula ingresada es incorrecta
-    </small>
+<section class="user-signup">
+  <div class="container">
+    <div class="row align-content-center">
+      <div class="col">
+
+      </div>
+      <div class="col">
+        <form class="signup-form" #userSignup="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="cedula">Nro. de Cedula</label>
+            <input type="number" class="form-control" name="cedula" #cedula="ngModel" [(ngModel)]="user.cedula" id="cedula" placeholder="Ej: 1100000000"
+                   required>
+            <small *ngIf="cedula.touched && !cedula.valid" class="form-text text-warning">La cedula ingresada es incorrecta
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electronico:</label>
+            <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" id="email" placeholder="ejemplo@ejemplo.com" required>
+            <small *ngIf="email.touched && !email.valid" class="form-text text-warning">El correo ingresado es invalido</small>
+          </div>
+          <div class="form-group">
+            <label for="nombres">Nombres:</label>
+            <input type="text" class="form-control" name="nombres" #nombres="ngModel" [(ngModel)]="user.nombres" id="nombres"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" class="form-control" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos"
+                   id="apellidos" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Contrasena:</label>
+            <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password"
+                   id="password" required>
+          </div>
+          <div class="form-group">
+            <label for="password_confirmation">Confirme su contrasena</label>
+            <input type="password" class="form-control" name="password_confirmation" #password="ngModel"
+                   [(ngModel)]="user.password_confirmation" id="password_confirmation" required>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!userSignup.form.valid">Registrarse</button>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="email">Correo Electronico:</label>
-    <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" id="email" required>
-    <small *ngIf="email.touched && !email.valid" class="form-text text-warning">El correo ingresado es invalido</small>
-  </div>
-  <div class="form-group">
-    <label for="nombres">Nombres:</label>
-    <input type="text" class="form-control" name="nombres" #nombres="ngModel" [(ngModel)]="user.nombres" id="nombres"
-           required>
-  </div>
-  <div class="form-group">
-    <label for="apellidos">Apellidos:</label>
-    <input type="text" class="form-control" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos"
-           id="apellidos" required>
-  </div>
-  <div class="form-group">
-    <label for="password">Contrasena:</label>
-    <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password"
-           id="password" required>
-  </div>
-  <div class="form-group">
-    <label for="password_confirmation">Confirme su contrasena</label>
-    <input type="password" class="form-control" name="password_confirmation" #password="ngModel"
-           [(ngModel)]="user.password_confirmation" id="password_confirmation" required>
-  </div>
-  <button type="submit" class="btn btn-primary" [disabled]="!userSignup.form.valid">Registrarse</button>
-</form>
+</section>

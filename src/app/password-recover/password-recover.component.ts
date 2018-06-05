@@ -18,7 +18,7 @@ export class PasswordRecoverComponent implements OnInit {
   ngOnInit() {
   }
 
-  public sendRecoverMail(email: string) {
+  public sendRecoverMail() {
 
   }
 

@@ -1,3 +1,7 @@
 .list-group-item {
   padding: 0.5em;
+  height: 80%;
+  width: 80%;
+  border-radius: 0;
+
 }
