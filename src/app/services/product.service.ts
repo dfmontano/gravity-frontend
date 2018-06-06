@@ -12,9 +12,8 @@ export class ProductService {
     this.apiUrl = environment.apiUrl;
   }
 
-  getAll() {
-
-
+  getApproved(): Observable<any> {
+    return this.http.get(this.apiUrl + '/products/index/approved/true');
   }
 
   getByStore(storeId: string) {

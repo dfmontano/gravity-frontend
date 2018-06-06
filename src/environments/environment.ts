@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://api.clubdecomprasdonesitios.com'
+  apiUrl: 'http://localhost:3000'
 };
