@@ -8,6 +8,7 @@ import {HomeComponent} from './home/home.component';
 import {UsersListComponent} from './users-list/users-list.component';
 import {SingleStoreComponent} from './single-store/single-store.component';
 import {PasswordRecoverComponent} from './password-recover/password-recover.component';
+import {SingleProductComponent} from './single-product/single-product.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   {path: 'inicio', component: HomeComponent},
   {path: 'usuarios/lista', component: UsersListComponent},
   {path: 'tiendas/:id', component: SingleStoreComponent},
+  {path: 'productos/:id', component: SingleProductComponent},
   {path: 'usuarios/recuperar_contrasena' , component: PasswordRecoverComponent},
   {path: '**', component: HomeComponent}
 ];

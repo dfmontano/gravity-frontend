@@ -14,3 +14,9 @@
   background: transparent !important;
 }
 
+.navbar-logo {
+  width: 100%;
+  height: auto;
+  /*padding: auto;*/
+}
+

@@ -1,10 +1,22 @@
 <section class="user-signup">
-  <div class="container">
+  <div class="container signup-area">
     <div class="row align-content-center">
-      <div class="col">
-
+      <div class="col-lg">
+        <div class="signup-banner">
+          <ngb-carousel>
+            <ng-template ngbSlide>
+              <img src="./assets/images/brand-wall.jpeg" alt="First slide" class="signup-banner banner-image">
+            </ng-template>
+            <ng-template ngbSlide>
+              <img src="./assets/images/brand-wall-2.jpeg" alt="Second slide" class="signup-banner banner-image">
+            </ng-template>
+            <ng-template ngbSlide>
+              <img src="./assets/images/brand-wall-3.jpeg" alt="Third slide" class="signup-banner banner-image">
+            </ng-template>
+          </ngb-carousel>
+        </div>
       </div>
-      <div class="col">
+      <div class="col-lg">
         <form class="signup-form" #userSignup="ngForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="cedula">Nro. de Cedula</label>
