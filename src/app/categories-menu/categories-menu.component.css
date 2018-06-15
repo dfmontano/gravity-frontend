@@ -1,7 +1,18 @@
+.categories-menu {
+  padding-left: 3em;
+}
 .list-group-item {
   padding: 0.5em;
   height: 80%;
   width: 80%;
   border-radius: 0;
+  font-size: smaller;
+}
 
+#categories-header {
+  height: 120%;
+  font-weight: bold;
+  text-align: center;
+  background-color: black;
+  color: white;
 }

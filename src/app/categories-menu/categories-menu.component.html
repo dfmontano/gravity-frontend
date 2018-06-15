@@ -1,6 +1,7 @@
 <section class="categories-menu">
-  <div class="list-group" *ngFor="let category of categories" ngbDropdown>
-    <button type="button" class="list-group-item list-group-item-action" id="{{ category.name }}" ngbDropdownToggle
+  <div class="list-group" *ngFor="let category of categories; let i= index" ngbDropdown>
+    <div *ngIf="i == 0" class="list-group-item" id="categories-header">CATEGORÍAS</div>
+    <button type="button" class="list-group-item list-group-item-action category-item" id="{{ category.name }}" ngbDropdownToggle
             placement="right">
       {{ category.name }}
     </button>

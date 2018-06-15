@@ -1,10 +1,24 @@
 <section class="home-section">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-3">
+      <div class="col-4">
         <app-categories-menu></app-categories-menu>
       </div>
-      <div class="col-9"></div>
+      <div class="col-8">
+        <section class="home-banner">
+          <ngb-carousel>
+            <ng-template ngbSlide>
+              <img [src]="'./assets/images/home-banner/banner01.png'" class="home-banner-img" alt="First slide">
+            </ng-template>
+            <ng-template ngbSlide>
+              <img [src]="'./assets/images/home-banner/banner02.png'" class="home-banner-img" alt="First slide">
+            </ng-template>
+            <ng-template ngbSlide>
+              <img [src]="'./assets/images/home-banner/banner03.png'" class="home-banner-img" alt="First slide">
+            </ng-template>
+          </ngb-carousel>
+        </section>
+      </div>
     </div>
   </div>
 </section>

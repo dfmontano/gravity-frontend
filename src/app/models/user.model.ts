@@ -6,6 +6,7 @@ export class User {
   nombres: string;
   apellidos: string;
   celular: string;
+  convencional: string;
   email: string;
   password: string;
   password_confirmation: string;
@@ -15,5 +16,8 @@ export class User {
   calle_secundaria: string;
   fecha_nacimiento: string;
   created_at: string;
+  province: string;
+  city: string;
+  referencia: string;
 
 }

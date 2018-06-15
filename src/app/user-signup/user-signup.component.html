@@ -1,6 +1,6 @@
 <section class="user-signup">
   <div class="container signup-area">
-    <div class="row align-content-center">
+    <div class="row align-content-center align-items-center">
       <div class="col-lg">
         <div class="signup-banner">
           <ngb-carousel>
@@ -17,51 +17,102 @@
         </div>
       </div>
       <div class="col-lg">
-        <form class="signup-form" #userSignup="ngForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="cedula">Nro. de Cedula</label>
-            <input type="number" class="form-control" name="cedula" #cedula="ngModel" [(ngModel)]="user.cedula"
-                   id="cedula" placeholder="Ej: 1100000000"
-                   required>
-            <small *ngIf="cedula.touched && !cedula.valid" class="form-text text-warning">La cedula ingresada es
-              incorrecta
-            </small>
+        <form class="signup-form" #userSignup="ngForm">
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="cedula">Nro. de Cedula: *</label>
+              <input type="number" class="form-control" name="cedula" #cedula="ngModel" [(ngModel)]="user.cedula"
+                     id="cedula" placeholder="Ej: 1100000000"
+                     required>
+              <small *ngIf="cedula.touched && !cedula.valid" class="form-text text-warning">La cedula ingresada es
+                incorrecta
+              </small>
+            </div>
+            <div class="form-group col">
+              <label for="email">Correo Electronico: *</label>
+              <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" id="email"
+                     placeholder="ejemplo@ejemplo.com" required>
+              <small *ngIf="email.touched && !email.valid" class="form-text text-warning">El correo ingresado es
+                invalido
+              </small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="nombres">Nombres: *</label>
+              <input type="text" class="form-control" name="nombres" #nombres="ngModel" [(ngModel)]="user.nombres"
+                     id="nombres"
+                     required>
+            </div>
+            <div class="form-group col">
+              <label for="apellidos">Apellidos: *</label>
+              <input type="text" class="form-control" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos"
+                     id="apellidos" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="celular">Celular: *</label>
+              <input type="number" class="form-control" name="celular" #celular="ngModel" [(ngModel)]="user.celular"
+                     id="celular" required>
+            </div>
+            <div class="form-group col">
+              <label for="convencional">Telf. Fijo: </label>
+              <input type="number" class="form-control" name="convencional" #convencional="ngModel" [(ngModel)]="user.convencional" id="convencional">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="province">Provincia *</label>
+              <select class="form-control" name="province" #province="ngModel" [(ngModel)]="user.province" id="province" required>
+                <option value="" disabled selected>Seleccione una provincia</option>
+                <option *ngFor="let province of provinces" [value]="province.key">{{ province.name }}</option>
+              </select>
+            </div>
+            <div class="form-group col">
+              <label for="city">Ciudad: *</label>
+              <input type="text" class="form-control" name="city" #city="ngModel" [(ngModel)]="user.city" id="city" required>
+            </div>
           </div>
           <div class="form-group">
-            <label for="email">Correo Electronico:</label>
-            <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" id="email"
-                   placeholder="ejemplo@ejemplo.com" required>
-            <small *ngIf="email.touched && !email.valid" class="form-text text-warning">El correo ingresado es
-              invalido
-            </small>
+            <label for="calle_principal">Calle Principal:</label>
+            <input type="text" class="form-control" name="calle_principal" #calle_principal="ngModel"
+                   [(ngModel)]="user.calle_principal" id="calle_principal" required>
           </div>
           <div class="form-group">
-            <label for="nombres">Nombres:</label>
-            <input type="text" class="form-control" name="nombres" #nombres="ngModel" [(ngModel)]="user.nombres"
-                   id="nombres"
-                   required>
+            <label for="calle_secundaria">Calle Secundaria:</label>
+            <input type="text" class="form-control" name="calle_secundaria" #calle_secundaria="ngModel"
+                   [(ngModel)]="user.calle_secundaria" id="calle_secundaria" required>
           </div>
           <div class="form-group">
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" class="form-control" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos"
-                   id="apellidos" required>
+            <label for="referencia">Referencia o Dirección laboral: </label>
+            <input type="text" class="form-control" name="referencia" #referencia="ngModel" [(ngModel)]="user.referencia" id="referencia">
           </div>
-          <div class="form-group">
-            <label for="celular">Celular:</label>
-            <input type="number" class="form-control" name="celular" #celular="ngModel" [(ngModel)]="user.celular"
-                   id="celular" required>
+          <!--<div class="form-group">-->
+          <!--<label for="password">Contrasena:</label>-->
+          <!--<input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password"-->
+          <!--id="password" required>-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+          <!--<label for="password_confirmation">Confirme su contrasena</label>-->
+          <!--<input type="password" class="form-control" name="password_confirmation" #password="ngModel"-->
+          <!--[(ngModel)]="user.password_confirmation" id="password_confirmation" required>-->
+          <!--</div>-->
+          <div class="form-row">
+            <div class="form-group col"></div>
+            <div class="form-group col">
+              <button type="submit" class="btn btn-primary" [disabled]="!userSignup.form.valid" mwlConfirmationPopover
+                      [popoverTitle]="popoverTitle"
+                      [popoverMessage]="popoverMessage"
+                      [confirmText]="confirmText"
+                      [cancelText]="cancelText"
+                      placement="top"
+                      (confirm)="onSubmit()"
+                      (cancel)="cancelClicked = true">Registrarse
+              </button>
+            </div>
+            <div class="form-group col"></div>
           </div>
-          <div class="form-group">
-            <label for="password">Contrasena:</label>
-            <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password"
-                   id="password" required>
-          </div>
-          <div class="form-group">
-            <label for="password_confirmation">Confirme su contrasena</label>
-            <input type="password" class="form-control" name="password_confirmation" #password="ngModel"
-                   [(ngModel)]="user.password_confirmation" id="password_confirmation" required>
-          </div>
-          <button type="submit" class="btn btn-primary" [disabled]="!userSignup.form.valid">Registrarse</button>
         </form>
       </div>
     </div>

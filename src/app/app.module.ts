@@ -1,6 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+// import { NgHttpLoaderModule } from 'ng-http-loader';
 
 import {AppComponent} from './app.component';
 import {UserSignupComponent} from './user-signup/user-signup.component';
@@ -23,6 +25,7 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
 import { PasswordRecoverComponent } from './password-recover/password-recover.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { CartItemsComponent } from './cart-items/cart-items.component';
+import { SignupConfirmationComponent } from './signup-confirmation/signup-confirmation.component';
 
 
 @NgModule({
@@ -40,13 +43,18 @@ import { CartItemsComponent } from './cart-items/cart-items.component';
     PasswordRecoverComponent,
     SingleProductComponent,
     CartItemsComponent,
+    SignupConfirmationComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
     HttpClientModule,
-    routing
+    // NgHttpLoaderModule,
+    routing,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'warning' // set defaults here
+    })
   ],
   providers: [
     UserService,
