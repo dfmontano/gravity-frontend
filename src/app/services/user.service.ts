@@ -25,6 +25,10 @@ export class UserService {
     return this.http.get(this.apiUrl + '/users/show/' + id, {headers: headers});
   }
 
+  getName(id: number): Observable<any> {
+    return this.http.get(this.apiUrl + 'users/name/' + id);
+  }
+
   create(user: User): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const data = JSON.stringify(user);

@@ -1,0 +1,12 @@
+<div class="card">
+  <img class="card-img-top" [src]="product.images[0]">
+  <div class="card-body">
+    <h5><strong>{{ product.name }}</strong></h5>
+    <p class="card-text">
+      {{ product.description }}
+    </p>
+  </div>
+  <div class="card-footer">
+    <star-rating [starType]="'svg'" [rating]="product.rating" [readOnly]="true" [step]="0.5"></star-rating>
+  </div>
+</div>

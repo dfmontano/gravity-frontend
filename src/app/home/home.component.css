@@ -1,3 +1,8 @@
+.home-section {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
 .home-banner {
   padding-right: 3em;
 }
@@ -5,4 +10,21 @@
 .home-banner-img {
   height: 100%;
   width: 100%;
+}
+
+.featured-products {
+  background-color: #ffffff;
+  padding-top: 3em;
+  padding-right: 3em;
+  padding-left: 3em;
+}
+
+.product-thumbs {
+  padding-top: 2em;
+}
+
+.featured-products-heading {
+  padding-top: 0.5em;
+  border-top: 3px solid;
+  border-bottom: 1px solid #f8f9fa;
 }

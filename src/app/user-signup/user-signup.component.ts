@@ -41,10 +41,10 @@ export class UserSignupComponent implements OnInit {
 
     this._userService.create(this.user).subscribe(
       result => {
-        this.router.navigate(['/thanks']);
+        this.router.navigate(['/gracias']);
         console.log(result);
         this.auth_token = result.auth_token;
-        console.log(this.auth_token);
+        // console.log(this.auth_token);
       },
       error1 => {
         console.log(error1);

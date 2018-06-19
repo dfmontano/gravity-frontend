@@ -7,18 +7,28 @@
       <div class="col-8">
         <section class="home-banner">
           <ngb-carousel>
-            <ng-template ngbSlide>
-              <img [src]="'./assets/images/home-banner/banner01.png'" class="home-banner-img" alt="First slide">
-            </ng-template>
-            <ng-template ngbSlide>
-              <img [src]="'./assets/images/home-banner/banner02.png'" class="home-banner-img" alt="First slide">
-            </ng-template>
-            <ng-template ngbSlide>
-              <img [src]="'./assets/images/home-banner/banner03.png'" class="home-banner-img" alt="First slide">
+            <ng-template ngbSlide *ngFor="let image of images">
+              <img [src]="image" class="home-banner-img" alt="Slide">
             </ng-template>
           </ngb-carousel>
         </section>
       </div>
     </div>
+  </div>
+</section>
+<section class="featured-products">
+  <div class="container-fluid">
+    <div class="row featured-products-heading">
+      <div class="col">
+        <h3>Productos Destacados</h3>
+      </div>
+    </div>
+    <section class="product-thumbs">
+      <div class="row">
+        <div class="col-md-3" *ngFor="let product of featuredProducts">
+          <app-mini-product [product]="product" ></app-mini-product>
+        </div>
+      </div>
+    </section>
   </div>
 </section>

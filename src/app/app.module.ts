@@ -2,7 +2,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
-// import { NgHttpLoaderModule } from 'ng-http-loader';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { StarRatingModule } from 'angular-star-rating';
 
 import {AppComponent} from './app.component';
 import {UserSignupComponent} from './user-signup/user-signup.component';
@@ -26,6 +28,7 @@ import { PasswordRecoverComponent } from './password-recover/password-recover.co
 import { SingleProductComponent } from './single-product/single-product.component';
 import { CartItemsComponent } from './cart-items/cart-items.component';
 import { SignupConfirmationComponent } from './signup-confirmation/signup-confirmation.component';
+import { MiniProductComponent } from './mini-product/mini-product.component';
 
 
 @NgModule({
@@ -44,13 +47,16 @@ import { SignupConfirmationComponent } from './signup-confirmation/signup-confir
     SingleProductComponent,
     CartItemsComponent,
     SignupConfirmationComponent,
+    MiniProductComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
     HttpClientModule,
-    // NgHttpLoaderModule,
+    LoadingBarHttpClientModule,
+    LoadingBarRouterModule,
+    StarRatingModule.forRoot(),
     routing,
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'warning' // set defaults here
@@ -60,6 +66,7 @@ import { SignupConfirmationComponent } from './signup-confirmation/signup-confir
     UserService,
     StoreService,
     CategoryService,
+    ProductService,
     appRoutingProviders
   ],
   bootstrap: [AppComponent]
