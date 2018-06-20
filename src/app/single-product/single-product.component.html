@@ -1,3 +1,92 @@
 <section class="single-product">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">{{ product.category.name }}</li>
+      <li class="breadcrumb-item active"> {{ product.subcategory.name }}</li>
+    </ol>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </div>
+      <div class="col-md-6">
+        <div class="container">
+          <div class="row product-title">
+            <h4 class="h4">{{ product.name }}</h4>
+          </div>
+          <div class="row product-stars">
+            <star-rating [rating]="product.rating"></star-rating>
+            {{ product.reviews }} Calificaciones | {{ product.ventas }} Ventas
+          </div>
+          <div class="row">
+            <table class="table table-borderless">
+              <tbody>
+              <tr>
+                <td>SKU:</td>
+                <td>{{ product.sku }}</td>
+              </tr>
+              <tr>
+                <td>Categoría:</td>
+                <td>{{ product.category.name }}, {{ product.subcategory.name }}</td>
+              </tr>
+              <tr>
+                <td>Precio:</td>
+                <td><s> {{ product.price }} </s></td>
+              </tr>
+              <tr>
+                <td>Precio Afiliado:</td>
+                <td>{{ product.discount_price }} <span class="badge badge-success">{{ product.discount }}% Descuento</span> </td>
+              </tr>
+              <br>
+              <br>
+              <tr>
+                <td>Cantidad:  <input type="number"> </td>
+                <td> <button type="button" class="btn btn-success">Añadir al Carrito</button> </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header">
+            Acerca de la Tienda
+          </div>
+          <img class="card-img-top" src="./assets/images/logo-done.png">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ product.store.nombre }}
+            </h5>
+            {{ product.store.calle_principal }} & {{ product.store.calle_secundaria }}
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary">Visitar Tienda</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" >Descripcion del Producto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" >Especificaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" >Calificaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Formas de envio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 
 </section>

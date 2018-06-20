@@ -25,7 +25,7 @@ export class Store {
   created_at: number;
   updated_at: string;
   approved: boolean;
-  category: Category;
-  subcategory: Subcategory;
+  category: Category = new Category();
+  subcategory: Subcategory = new Subcategory();
 
 }

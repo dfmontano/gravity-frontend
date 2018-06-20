@@ -5,6 +5,7 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { StarRatingModule } from 'angular-star-rating';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import {AppComponent} from './app.component';
 import {UserSignupComponent} from './user-signup/user-signup.component';
@@ -57,6 +58,7 @@ import { MiniProductComponent } from './mini-product/mini-product.component';
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
     StarRatingModule.forRoot(),
+    NgxGalleryModule,
     routing,
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'warning' // set defaults here
