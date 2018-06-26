@@ -1,0 +1,18 @@
+<section class="category-results">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <app-categories-menu></app-categories-menu>
+      </div>
+      <div class="col-8">
+        <section class="search-results">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let store of stores">
+              <app-mini-store [store]="store"></app-mini-store>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>

@@ -10,6 +10,7 @@ import {SingleStoreComponent} from './single-store/single-store.component';
 import {PasswordRecoverComponent} from './password-recover/password-recover.component';
 import {SingleProductComponent} from './single-product/single-product.component';
 import {SignupConfirmationComponent} from './signup-confirmation/signup-confirmation.component';
+import {CategoryResultsComponent} from './category-results/category-results.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   {path: 'tiendas/:id', component: SingleStoreComponent},
   {path: 'productos/:id', component: SingleProductComponent},
   {path: 'usuarios/recuperar_contrasena' , component: PasswordRecoverComponent},
+  {path: 'subcategorias/:id/tiendas', component: CategoryResultsComponent},
   {path: '**', component: HomeComponent}
 ];
 

@@ -1,5 +1,6 @@
 import { Category } from './category.model';
 import { Subcategory } from './subcategory.model';
+import { environment } from '../../environments/environment';
 
 export class Store {
 
@@ -25,7 +26,10 @@ export class Store {
   created_at: number;
   updated_at: string;
   approved: boolean;
+  rating: number;
   category: Category = new Category();
   subcategory: Subcategory = new Subcategory();
+  logo: any;
+  images: string[];
 
 }

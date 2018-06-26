@@ -1,0 +1,14 @@
+<div class="card h-100">
+  <img class="card-img-top" src="{{store.logo.url}}">
+  <div class="card-body">
+    <a [routerLink]="['/tiendas/' + store.id]">{{ store.nombre | titlecase }}</a>
+    <p class="card-text mini-store-address">
+      <br>
+      {{store.calle_principal}}, {{store.calle_secundaria}}
+    </p>
+  </div>
+  <div class="card-footer">
+    <star-rating [starType]="'svg'" [rating]="store.rating" [readOnly]="true" [step]="0.5" [showHalfStars]="true"></star-rating>
+  </div>
+</div>
+<br>

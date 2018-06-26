@@ -8,7 +8,7 @@
     <div class="dropdown-menu" *ngIf="category.subcategories" ngbDropdownMenu
          attr.aria-labelledby="{{category.name}}">
       <button type="button" *ngFor="let subcategory of category.subcategories"
-              class="dropdown-item">{{ subcategory.name }}
+              class="dropdown-item" [routerLink]="['/subcategorias/' + subcategory.id + '/tiendas']">{{ subcategory.name }}
       </button>
 
     </div>

@@ -18,4 +18,8 @@ export class StoreService {
     return this.http.get(request_url);
   }
 
+  getBySubcategory(subcategory_id: number): Observable<any> {
+    return this.http.get(this.apiUrl + '/subcategories/' + subcategory_id + '/stores');
+  }
+
 }

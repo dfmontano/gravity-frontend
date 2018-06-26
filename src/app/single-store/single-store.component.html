@@ -5,18 +5,15 @@
       <li class="breadcrumb-item">{{ store.subcategory.name }}</li>
     </ol>
   </nav>
-  <div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <img class="img-fluid" [src]="'./assets/images/test-store/portada.jpeg'">
+    </div>
     <div class="row">
       <div class="col-6 col-md-4">
       </div>
       <div class="col-6 col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">{{ store.nombre }}</h4>
-            <p class="card-text">{{ store.slogan }}</p>
-            <p class="card-text">{{ store.calle_principal }}, {{ store.calle_secundaria }}, {{ store.sector }} | Miembro desde: {{ store.created_at | date: 'yyyy' }}</p>
-          </div>
-        </div>
+
       </div>
       <div class="row">
 

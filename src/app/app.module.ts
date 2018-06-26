@@ -30,6 +30,8 @@ import { SingleProductComponent } from './single-product/single-product.componen
 import { CartItemsComponent } from './cart-items/cart-items.component';
 import { SignupConfirmationComponent } from './signup-confirmation/signup-confirmation.component';
 import { MiniProductComponent } from './mini-product/mini-product.component';
+import { MiniStoreComponent } from './mini-store/mini-store.component';
+import { CategoryResultsComponent } from './category-results/category-results.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { MiniProductComponent } from './mini-product/mini-product.component';
     CartItemsComponent,
     SignupConfirmationComponent,
     MiniProductComponent,
+    MiniStoreComponent,
+    CategoryResultsComponent,
   ],
   imports: [
     BrowserModule,
