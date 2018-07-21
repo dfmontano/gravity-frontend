@@ -1,5 +1,5 @@
-<div class="card">
-  <img class="card-img-top" [src]="product.images[0]">
+<div class="card h-100">
+  <img class="card-img-top" [src]="apiURL + product.main_photo.url">
   <div class="card-body">
     <a [routerLink]="['/productos/' + product.id]">
       <h5><strong>{{ product.name }}</strong></h5>

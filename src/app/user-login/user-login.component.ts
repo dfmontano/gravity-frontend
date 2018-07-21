@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {User} from '../models/user.model';
-import {UserService} from '../services/user.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { User } from '../models/user.model';
+import { UserService } from '../services/user.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-user-login',
@@ -13,7 +15,8 @@ export class UserLoginComponent implements OnInit {
   user: User;
   private auth_token: string;
 
-  constructor(private _userService: UserService, private router: Router) {
+  constructor(private _userService: UserService, private router: Router, private _productService: ProductService,
+              public activeModal: NgbActiveModal) {
     this.user = new User();
   }
 

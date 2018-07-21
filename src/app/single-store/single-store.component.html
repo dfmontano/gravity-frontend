@@ -1,23 +1,74 @@
 <section class="single-store">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">{{ store.category.name }}</li>
-      <li class="breadcrumb-item">{{ store.subcategory.name }}</li>
-    </ol>
-  </nav>
+  <!--<nav class="navbar navbar-dark bg-primary">-->
+    <!--<div class="nav">-->
+      <!--<a class="nav-link">Tienda</a>-->
+      <!--<a class="nav-link">Productos</a>-->
+      <!--<a class="nav-link">Contacto</a>-->
+    <!--</div>-->
+  <!--</nav>-->
   <div class="container-fluid">
     <div class="row">
-      <img class="img-fluid" [src]="'./assets/images/test-store/portada.jpeg'">
+      <img class="img-fluid store-banner" src="{{ apiURL + store.cover.url }}">
     </div>
-    <div class="row">
-      <div class="col-6 col-md-4">
+    <section class="store-info">
+      <div class="row align-content-center">
+        <div class="col-md-3">
+          <img class="img-thumbnail store-logo" src="{{ apiURL + store.logo.url }}" >
+        </div>
+        <div class="col-md-7">
+          <div class="container-fluid">
+            <div class="row">
+              <h3> {{ store.nombre | titlecase }}
+                <star-rating [starType]="'svg'" [rating]="store.rating" [readOnly]="true" [step]="0.5" [showHalfStars]="true"></star-rating>
+              </h3>
+            </div>
+            <div class="row">
+              <p class="text-muted"><em>{{ store.slogan }}</em>  </p>
+            </div>
+            <div class="row">
+              <small>{{ store.calle_principal }}, {{ store.calle_secundaria }}, {{ store.ciudad | titlecase }}</small>
+            </div>
+            <div class="row">
+              {{ store.total_products }} Productos
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <img *ngIf="!store.owner_photo.url" class="store-owner-img" src="./assets/images/defaults/store_owner.png">
+          <img *ngIf="store.owner_photo.url" class="rounded-circle store-owner-img" src="{{ apiURL + store.owner_photo.url }}">
+        </div>
       </div>
-      <div class="col-6 col-md-4">
-
-      </div>
+    </section>
+    <section class="store-gallery">
+      <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    </section>
+    <!--<section class="store-info-map">-->
+      <!--<div class="row">-->
+        <!--<ngui-map zoom="13" center="37.775, -122.434" (mapReady$)="onMapReady($event)" mapTypeId="satellite"></ngui-map>-->
+      <!--</div>-->
+    <!--</section>-->
+    <section class="store-info-tabs">
       <div class="row">
-
+        <ngb-tabset>
+          <ngb-tab title="Productos">
+            <ng-template ngbTabContent>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-3" *ngFor="let product of storeProducts">
+                    <app-mini-product [product]="product"></app-mini-product>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Informacion de la tienda">
+            <ng-template ngbTabContent=""></ng-template>
+          </ngb-tab>
+          <ngb-tab title="Reseñas">
+            <ng-template ngbTabContent=""></ng-template>
+          </ngb-tab>
+        </ngb-tabset>
       </div>
-    </div>
+    </section>
   </div>
 </section>

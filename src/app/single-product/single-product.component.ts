@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product.model';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-single-product',
@@ -11,12 +12,14 @@ import { Product } from '../models/product.model';
 })
 export class SingleProductComponent implements OnInit {
 
+  public apiURL: string;
   public product: Product;
   private productId;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
   constructor(private _productService: ProductService, private activatedRoute: ActivatedRoute) {
+    this.apiURL = environment.apiUrl;
     this.product = new Product();
     this.activatedRoute.params.subscribe(params => {
       this.productId = params.id;

@@ -57,7 +57,7 @@
           <div class="card-header">
             Acerca de la Tienda
           </div>
-          <img class="card-img-top" src="./assets/images/logo-done.png">
+          <img class="card-img-top" src="{{ apiURL + product.store.logo.url }}">
           <div class="card-body">
             <h5 class="card-title">
               {{ product.store.nombre }}
@@ -65,7 +65,7 @@
             {{ product.store.calle_principal }} & {{ product.store.calle_secundaria }}
             <br>
             <br>
-            <button type="button" class="btn btn-primary">Visitar Tienda</button>
+            <button type="button" class="btn btn-primary" [routerLink]="['/tiendas/' + product.store.id.toString()]" >Visitar Tienda</button>
           </div>
         </div>
       </div>

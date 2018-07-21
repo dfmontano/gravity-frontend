@@ -1,6 +1,8 @@
 import { Category } from './category.model';
 import { Subcategory } from './subcategory.model';
-import { environment } from '../../environments/environment';
+import { Cover } from './cover.model';
+import { Logo } from './logo.model';
+import { OwnerPhoto } from './owner-photo.model';
 
 export class Store {
 
@@ -14,6 +16,8 @@ export class Store {
   ruc: number;
   calle_principal: string;
   calle_secundaria: string;
+  ciudad: string;
+  provincia: string;
   sector: string;
   latitud: number;
   longitud: number;
@@ -27,9 +31,12 @@ export class Store {
   updated_at: string;
   approved: boolean;
   rating: number;
+  total_products: number;
   category: Category = new Category();
   subcategory: Subcategory = new Subcategory();
-  logo: any;
+  cover: Cover = new Cover();
+  owner_photo: OwnerPhoto = new OwnerPhoto();
+  logo: Logo = new Logo();
   images: string[];
 
 }

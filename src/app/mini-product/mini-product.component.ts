@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../models/product.model';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-mini-product',
@@ -10,7 +11,11 @@ export class MiniProductComponent implements OnInit {
 
   @Input() product: Product;
 
-  constructor() { }
+  public readonly apiURL: string;
+
+  constructor() {
+    this.apiURL = environment.apiUrl;
+  }
 
   ngOnInit() {
   }

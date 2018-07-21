@@ -16,6 +16,10 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {routing, appRoutingProviders} from './app.routing';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+
+import { NguiMapModule } from '@ngui/map';
+import { GMapModule } from 'primeng/gmap';
+
 import { UserLoginComponent } from './user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
 import { SingleStoreComponent } from './single-store/single-store.component';
@@ -32,6 +36,8 @@ import { SignupConfirmationComponent } from './signup-confirmation/signup-confir
 import { MiniProductComponent } from './mini-product/mini-product.component';
 import { MiniStoreComponent } from './mini-store/mini-store.component';
 import { CategoryResultsComponent } from './category-results/category-results.component';
+import { ReviewComponent } from './review/review.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -53,6 +59,8 @@ import { CategoryResultsComponent } from './category-results/category-results.co
     MiniProductComponent,
     MiniStoreComponent,
     CategoryResultsComponent,
+    ReviewComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +71,8 @@ import { CategoryResultsComponent } from './category-results/category-results.co
     LoadingBarRouterModule,
     StarRatingModule.forRoot(),
     NgxGalleryModule,
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCmb51Wo9fyXKCklq39PpDSGlDIVWjoXac'}),
+    GMapModule,
     routing,
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'warning' // set defaults here

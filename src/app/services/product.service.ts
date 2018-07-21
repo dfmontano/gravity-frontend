@@ -20,8 +20,8 @@ export class ProductService {
     return this.http.get(this.apiUrl + '/products/index/featured');
   }
 
-  getByStore(storeId: string) {
-
+  getByStore(store_id: number): Observable<any> {
+    return this.http.get(this.apiUrl + /stores/ + store_id + '/products');
   }
 
   getById(id: number): Observable<any> {

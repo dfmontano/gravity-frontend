@@ -1,3 +1,30 @@
 .single-store {
   /*padding-top: 2em;*/
 }
+
+.store-info {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.store-banner {
+  width: 100%;
+  height: 100%;
+}
+
+.store-info-tabs {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.store-logo {
+  width: 80%;
+  height: 80%;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+
+.store-owner-img {
+  width: 8em;
+  height: 8.1em;
+}
